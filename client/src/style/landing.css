@@ -1,0 +1,43 @@
+.main_title{
+  font-family: itc-american-typewriter, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24pt;
+}
+
+.highlight{
+  color:#DD3431;
+  text-decoration: underline;
+}
+
+.hero_landing{
+  min-height: 100vh;
+}
+
+.planetita{
+  max-width: 100px;
+}
+
+.button_column{
+  background-color:#000;
+  min-height: 100vh;
+}
+
+.red_bg{
+  background:#DD3431;
+  z-index: 2;
+}
+
+.img_bg_b{
+  position: absolute;
+  top:-25%;
+  left:-5%;
+  z-index: 1;
+}
+
+
+@media (min-width: 576px) {
+  .main_title{
+    font-size: 32pt;
+  }
+}

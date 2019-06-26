@@ -1,0 +1,14 @@
+.navb{
+  z-index: 2;
+  background-color:transparent;
+  transition: all .3s ease-in;
+}
+.is_below{
+  background-color:white;
+  transition: all .3s ease-in;
+}
+
+.logo{
+  max-width: 100px;
+  width:3vw;
+}
