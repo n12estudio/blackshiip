@@ -1,6 +1,7 @@
 import React from 'react';
-import {Container,Jumbotron,Row,Col,Button} from 'reactstrap'
+import {Container,Jumbotron,Row,Col} from 'reactstrap'
 import {Link} from 'react-router-dom';
+import explore from '../../assets/img/scroll.svg'
 
 export const Jumbo=({text,mainText,logo,img_col,top_hero,style,btnColor,multiverse,hero_bg_b})=>{
   return (
@@ -26,9 +27,9 @@ export const Jumbo=({text,mainText,logo,img_col,top_hero,style,btnColor,multiver
                       {mainText}
                     </h3>
                       {text}
-                    <Button className="my-5" color={btnColor}>
-                      Explore
-                    </Button>
+                    <img src={explore} alt="" height="40" className="explore my-5"/>
+
+
                   </Col>
               </Row>
           </Col>

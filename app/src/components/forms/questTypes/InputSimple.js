@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {FormGroup,Label,Col,Input,FormFeedback,FormText} from 'reactstrap';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 export default class InputSimple extends Component {
   constructor(props){
@@ -24,7 +25,10 @@ export default class InputSimple extends Component {
         pattern,
         name,
         regExp,
-        longQ
+        longQ,
+        autoFocus,
+        feedback,
+        limit
       },
       value,
     } = this.props
@@ -35,7 +39,7 @@ export default class InputSimple extends Component {
     return(
         <FormGroup row>
           <Label sm={sizeSM[0]} size="lg" for={forL} id={id} >
-            <i className={`fas fa-${icon}`}/>&nbsp;
+            <FontAwesomeIcon icon={icon}/>&nbsp;
             {label}
           </Label>
             <Col xs={12} sm={sizeSM[1]}>
@@ -43,24 +47,25 @@ export default class InputSimple extends Component {
                 <Input onChange={this.props.getValue}
                   className={type==='range'?'slider_range':'custom'}
                   value={value}
-                  valid={valid
+                  valid={valid&&value!==''
                     ?testR.test(value)
-                    :''
+                    :null
                   }
-                  invalid={invalid&&value.length>=10
+                  invalid={invalid&&value!==''
                     ?!testR.test(value)
-                    :''
+                    :null
                   }
                   pattern={pattern?pattern:null}
                   id={id}
                   type={type}
-                  autoFocus
+                  autoFocus={autoFocus?true:false}
                   required={required}
                   min={rango&&rango[0]}
                   max={rango&&rango[1]}
+                  maxLength={limit?limit:null}
                   name={name}/>
                 <FormFeedback className="animated fadeIn" valid>Súper</FormFeedback>
-                <FormFeedback>Ingresa 10 dígitos</FormFeedback>
+                <FormFeedback>{feedback}</FormFeedback>
                 <FormText>{longQ}</FormText>
 
             </Col>

@@ -4,6 +4,10 @@
   transition: all .3s ease-in;
 }
 .is_below{
+  background-color:#0C1A28;
+  transition: all .3s ease-in;
+}
+.b_side.is_below{
   background-color:white;
   transition: all .3s ease-in;
 }
@@ -11,4 +15,10 @@
 .logo{
   max-width: 100px;
   width:3vw;
+}
+
+@media (max-width: 576px) {
+  .logo{
+    width:30px;
+  }
 }

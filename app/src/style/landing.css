@@ -11,6 +11,9 @@
   font-size: 18pt;
   color:#DD3431;
 }
+.color_secondary{
+  color:#DD3431;
+}
 .highlight{
   color:#DD3431;
   text-decoration: underline;
@@ -21,7 +24,7 @@
 }
 
 .planetita{
-  max-width: 100px;
+  max-width: 200px;
 }
 
 .button_column{
@@ -39,6 +42,20 @@
   top:-25%;
   left:-5%;
   z-index: 1;
+}
+.section_success{
+  position: relative;
+}
+.confetti_success{
+  position:absolute;
+  left:25%;
+  top:-10%;
+  width:50%;
+}
+
+.nav-link.active{
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 

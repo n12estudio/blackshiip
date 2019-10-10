@@ -3,8 +3,35 @@ import {Switch,Route} from 'react-router-dom';
 import {TransitionGroup,CSSTransition} from 'react-transition-group';
 import {Landing,LandingB} from './components/routes';
 import {Navb} from './components/elements'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import {
+  faCheckSquare,
+  faCoffee,
+  faAt,
+  faBriefcase,
+  faUserAstronaut,
+  faPhone,
+  faTruckPickup,
+  faSitemap,
+  faBuilding
+
+} from '@fortawesome/free-solid-svg-icons'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/App.css';
+
+library.add(fab,
+  faCheckSquare,
+  faCoffee,
+  faAt,
+  faBriefcase,
+  faUserAstronaut,
+  faPhone,
+  faTruckPickup,
+  faSitemap,
+  faBuilding
+
+)
 
 export default class App extends Component{
   constructor(props){
@@ -17,7 +44,7 @@ export default class App extends Component{
     return (
       <main className="App">
           <div>
-            <Navb/>
+            <Navb location={location.pathname}/>
             <TransitionGroup>
               <CSSTransition key={location.pathname}
                              timeout={300}

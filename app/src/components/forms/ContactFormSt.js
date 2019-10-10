@@ -31,9 +31,10 @@ export default class ContactFormSt extends Component {
         {
             required:false,
             elType: 'WelcomeM',
-            message: 'Gracias por ponerte en contacto con nosotros, para empezar da click en "Siguiente" y un asesor se pondrá en contacto a la brevedad',
+            title:'¡Atrévete a crecer!',
+            message: 'Hay una solución para el problema que tiene tu empresa, cuéntanos los retos de ella y recibe un diagnóstico completamente gratis de lo que puedes mejorar.   ',
             small:"Puedes pasar a la siguiente pregunta presionando tab",
-            className:"text-center"
+            className:"text-center",
           },
         // {
         //   required:true,
@@ -166,15 +167,21 @@ export default class ContactFormSt extends Component {
           sizeSM:[4,8]
         },
         {
-          label:'Mail',
+          label: 'Correo electrónico',
+          elType: 'InputSimple',
           type:'email',
-          elType:'InputSimple',
-          forL:'email',
-          id:'email',
-          name:'email',
-          longQ:'Correo electrónico',
-          icon:'at',
-          sizeSM:[4,8]
+          forL: 'email',
+          id: 'email',
+          name: 'email',
+          longQ: 'Correo electrónico',
+          //eslint-disable-next-line
+          regExp:/@/,
+          valid:true,
+          required:true,
+          invalid:true,
+          feedback:'Ingresa un correo válido',
+          icon: 'at',
+          sizeSM: [5, 7]
         },
         {
           label:'Puesto',
@@ -218,6 +225,7 @@ export default class ContactFormSt extends Component {
           invalid:true,
           regExp:/^\d{10}$/,
           pattern:'[0-9]{10}',
+          limit:10,
           longQ:'Teléfono a 10 dígitos p.ej. 1234567890',
           icon:'phone',sizeSM:[4,8]
         },
@@ -255,7 +263,7 @@ export default class ContactFormSt extends Component {
     }
   }
   componentDidMount=()=>{
-    console.log(process.env)
+    // console.log(process.env)
     // this.switcher = setInterval(()=>{
     //   this.setState({
     //     show:!this.state.show
@@ -268,7 +276,7 @@ export default class ContactFormSt extends Component {
         nombre:'Grecia',
         apellidos:'Zurita',
         cargo:'Directora General',
-        email:'greciazurita@n12.mx',
+        email:'luiscasillas@n12.mx',
         tel:'2222222222',
         solucion:'Cosas chingonas',
 
@@ -332,7 +340,10 @@ export default class ContactFormSt extends Component {
   }
   keyHandler=(e)=>{
     if(e.key==='Tab'||e.key==='Enter'){
-      this.changePossibleQ(true,e)
+      if(this.timer) return clearTimeout(this.timer)
+      this.timer = setTimeout(()=>{
+        this.changePossibleQ(true,e)
+      },5000)
     }
     // else if (e.key==='ArrowLeft'){
     //   this.changePossibleQ(false)
@@ -345,18 +356,22 @@ export default class ContactFormSt extends Component {
     if(possibleQ[currentQ].required
       &&this.state[possibleQ[currentQ].name]===''){
       valid = false
+    } else if(possibleQ[currentQ].regExp){
+      const testR = new RegExp(possibleQ[currentQ].regExp)
+      valid = testR.test(this.state[possibleQ[currentQ].name])
     } else if(!possibleQ[currentQ].required) {
       valid = true
     }
+
     let index = currentQ
     if(d&&valid){
       if(index!==possibleQ.length-1){
-        index++
-        this.setState({
-          currentQ:index,
-          show:!this.state.show
-        },this.setProgress)
-      }
+      index++
+      this.setState({
+        currentQ:index,
+        show:!this.state.show
+      },this.setProgress)
+    }
 
     } else if (!d) {
       if(index===0)index=possibleQ.length
@@ -417,7 +432,7 @@ export default class ContactFormSt extends Component {
   }
   renderInputs=()=>{
     const {possibleQ,currentQ,show} = this.state
-    const {name,elType,rango} = possibleQ[currentQ]
+    const {name,elType,rango,className} = possibleQ[currentQ]
     return(
       <CSSTransition classNames="question"
                      key={currentQ}
@@ -449,7 +464,8 @@ export default class ContactFormSt extends Component {
             charact={possibleQ[currentQ]}/>}
           {elType==='WelcomeM'
           &&<WelcomeM
-             info={possibleQ[currentQ]} />}
+             info={possibleQ[currentQ]}
+              className={className}/>}
 
 
         </div>

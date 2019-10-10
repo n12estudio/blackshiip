@@ -4,7 +4,7 @@ import {ContactFormSt} from '../components/forms'
 
 import {start_lead,cancel_lead} from '../redux/actions/contact-actions';
 
-const ContactFormStCont =({start_lead,...rest})=>{
+const ContactFormStCont =({start_lead,cancel_lead,...rest})=>{
   return(
     <ContactFormSt
       postDataLead={start_lead}
