@@ -67,13 +67,19 @@ export default class Example extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mx-auto" navbar>
               <NavItem>
-                <NavLink href="/#mision">Misión</NavLink>
+                <NavLink href="#mision">Misión</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/#challenges">#Challenges</NavLink>
+                <NavLink href="#challenges">#Challenges</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="#oportunidad">Oportunidad</NavLink>
+              </NavItem>
+              {/* <NavItem>
+                <NavLink href="#exitos">Casos de éxitos</NavLink>
+              </NavItem> */}
+              <NavItem>
+                <NavLink href="#comunidad">Comunidad</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>

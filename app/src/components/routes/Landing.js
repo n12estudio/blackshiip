@@ -37,6 +37,7 @@ export const Landing=({history})=>{
              mainText={mainText} />
       <Container>
         <Row className="align-items-center">
+          <div id="#mision"/>
           <Col xs={{order:2,size:12}} sm={{order:1,size:6}}>
             <img className="img-fluid" src={section_2} alt=""/>
           </Col>
@@ -54,6 +55,7 @@ export const Landing=({history})=>{
           </Col>
         </Row>
         <Row>
+          <div id="#challenges"/>
           <Col>
             <ContactFormStCont/>
           </Col>
@@ -62,6 +64,7 @@ export const Landing=({history})=>{
           </Col>
         </Row>
         <Row className="align-items-center my-5 py-5">
+          <div id="#oportunidad"/>
           <Col xs={{order:2,size:12}} sm={{order:1,size:6}}>
             <img className="img-fluid" src={section_4} alt=""/>
           </Col>
@@ -78,6 +81,7 @@ export const Landing=({history})=>{
           </Col>
         </Row>
         {/* <SuccessStoriesACont/> */}
+        <div id="#comunidad"/>
         <CommunityA/>
         <WeAre/>
         <Row className="my-5">

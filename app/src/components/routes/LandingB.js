@@ -52,6 +52,7 @@ Nuestro modelo busca acercar a las startups, emprendedores, investigadores y uni
            <div className="decoration decor_1">
              <img className="img-fluid" src={decoration_6} alt=""/>
            </div>
+           <div id="#mision"/>
            <Col xs={8}>
              <img width="80" src={section_2} alt=""/>
              <h3 className="secondary_title my-3">¡Te acompañamos!</h3>
@@ -70,6 +71,7 @@ Nuestro modelo busca acercar a las startups, emprendedores, investigadores y uni
            <div className="decoration decor_2">
              <img className="img-fluid" src={decoration_2} alt=""/>
            </div>
+           <div id="#challenges"/>
            <Col xs={8}>
              <img width="80" src={section_3} alt=""/>
              <h3 className="secondary_title mt-3">¿Estás listo para crecer?</h3>
@@ -77,6 +79,7 @@ Nuestro modelo busca acercar a las startups, emprendedores, investigadores y uni
            </Col>
          </Row>
          <Row className="align-items-center justify-content-center py-5 my-5">
+           <div id="#oportunidad"/>
            <div className="decoration decor_3">
              <img className="img-fluid" src={decoration_5} alt=""/>
            </div>
@@ -94,12 +97,14 @@ Nuestro modelo busca acercar a las startups, emprendedores, investigadores y uni
            </Col>
          </Row>
          {/* <SuccessStoriesACont/> */}
+         <div id="#comunidad"/>
         <CommunityB/>
          <WeAre dark={true}/>
          <Row className="b_section align-items-center justify-content-center py-5 my-5">
            <div className="decoration decor_4">
              <img className="img-fluid" src={decoration_4} alt=""/>
            </div>
+           <div id="#challenges"/>
            <Col>
              <ContactFormLTDCont history={history}/>
            </Col>
