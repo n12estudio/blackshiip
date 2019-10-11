@@ -43,7 +43,7 @@ export default class InputOptions extends Component {
                   required={required}
                   name={name}>
                     {options.map((el,i)=>(
-                      <option value={el}>
+                      <option key={i} value={el}>
                         {el}
                       </option>
                     ))}

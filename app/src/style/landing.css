@@ -19,6 +19,10 @@
   text-decoration: underline;
 }
 
+.landing_b_body{
+  background-color: #000;
+}
+
 .hero_landing{
   min-height: 100vh;
 }
@@ -52,10 +56,46 @@
   top:-10%;
   width:50%;
 }
-
 .nav-link.active{
   font-weight: 700;
   text-decoration: underline;
+}
+.text-light.nav-link.active{
+  color:#3c3c3c!important;
+}
+
+.b_section{
+  position: relative;
+}
+
+.decoration{
+  position:absolute;
+}
+
+.decor_1{
+  right:-50%;
+  top:10%;
+}
+.decor_1 img{
+  max-width:60vw;
+}
+.decor_2{
+  left:-20%;
+}
+.decor_2 img{
+  max-height:60vh;
+}
+.decor_3{
+  right:-10%;
+}
+.decor_3 img{
+  max-height:60vh;
+}
+.decor_4{
+  right:-40%;
+}
+.decor_4 img{
+  max-height:40vh;
 }
 
 

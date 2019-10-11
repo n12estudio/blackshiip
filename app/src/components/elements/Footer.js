@@ -80,13 +80,18 @@ export const Footer=(props)=>{
           <NavItem>
             <div className="icon_container d-flex">
               <div className="footer_icon mr-3">
-                <a className="" href="twitter.com">
-                  <FontAwesomeIcon className="text-light" size="lg" icon={['fab','twitter']}/>
+                <a className="" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/blackshiipcommunity/?hl=es-la">
+                  <FontAwesomeIcon className="text-light" size="lg" icon={['fab','instagram']}/>
                 </a>
               </div>
               <div className="footer_icon mr-3">
-                <a className="" href="facebook.com">
+                <a className="" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Blackshiip/">
                     <FontAwesomeIcon className="text-light" size="lg" icon={['fab','facebook']}/>
+                </a>
+              </div>
+              <div className="footer_icon mr-3">
+                <a className="" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/48187499">
+                    <FontAwesomeIcon className="text-light" size="lg" icon={['fab','linkedin']}/>
                 </a>
               </div>
             </div>

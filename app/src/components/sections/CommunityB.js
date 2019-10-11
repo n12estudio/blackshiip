@@ -1,11 +1,14 @@
 import React,{Fragment} from 'react';
 import {Row,Col} from 'reactstrap';
-import n12 from '../../assets/img/logo/alliances/n12.svg';
-import lsdom from '../../assets/img/logo/alliances/lsdom.svg';
-import toro from '../../assets/img/logo/alliances/toro.svg';
-import redecim from '../../assets/img/logo/alliances/redecim.svg';
-import workosfera from '../../assets/img/logo/alliances/workosfera.svg';
-import neineo from '../../assets/img/logo/alliances/neineo.svg';
+import n12 from '../../assets/img/logo/alliances/white/n12.svg';
+import lsdom from '../../assets/img/logo/alliances/white/lsdom.svg';
+import toro from '../../assets/img/logo/alliances/white/toro.svg';
+import redecim from '../../assets/img/logo/alliances/white/redecim.svg';
+import workosfera from '../../assets/img/logo/alliances/white/workosfera.svg';
+import neineo from '../../assets/img/logo/alliances/white/neineo.svg';
+
+import section_6 from '../../assets/img/sections_b/section_6.svg'
+
 
 const community = [
   {
@@ -34,12 +37,13 @@ const community = [
   }
 ]
 
-export const CommunityA=()=>{
+export const CommunityB=()=>{
   return(
     <Fragment>
       <Row>
         <Col>
-          <h3 className="secondary_title my-5">Comunidad</h3>
+          <img width="80" src={section_6} alt=""/>
+          <h3 className="secondary_title my-4">Comunidad</h3>
         </Col>
       </Row>
       <Row className="d-flex d-md-none align-items-center">

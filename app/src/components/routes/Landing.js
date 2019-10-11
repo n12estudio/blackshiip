@@ -2,7 +2,10 @@ import React from 'react';
 import {Row,Col,Container} from 'reactstrap';
 import {Jumbo,Footer} from '../elements'
 import {CommunityA,WeAre} from '../sections';
-import {ContactFormStCont,SuccessStoriesACont} from '../../containers'
+import {
+  ContactFormStCont,
+  // SuccessStoriesACont
+} from '../../containers'
 
 import logo from '../../assets/img/logo/logo.svg'
 import planetita from '../../assets/img/planetita.svg'
@@ -13,14 +16,15 @@ import section_3 from '../../assets/img/sections_a/section_3_a.png'
 import section_4 from '../../assets/img/sections_a/oportunity.png'
 import '../../style/landing.css'
 
-export const Landing=({setShow})=>{
+export const Landing=({history})=>{
   const btnColor = 'primary'
   const text=<p>
     <b>Blackshiip</b> es una comunidad que busca incrementar el impacto de la innovación abierta, mediante el desarrollo e integración de tecnología y el escalamiento de modelos de negocio disruptivos que integren impacto social, ambiental y económico.
+    <br/><br/>
     Nuestro modelo busca acercar a la industria con startups/emprendedores, investigadores y universidades, y a través del trabajo colaborativo logren superar fase de product/market fit y contribuyan al desarrollo sostenible del planeta.
   </p>
   const mainText=<div>
-    Conectamos <b className="highlight">startups</b> con el mercado.
+    Conectamos <b className="highlight">el mercado</b> con startups.
   </div>
 
   return (
@@ -30,7 +34,6 @@ export const Landing=({setShow})=>{
              top_hero={planetita}
              img_col={to_black}
              text={text}
-             setShow={setShow}
              mainText={mainText} />
       <Container>
         <Row className="align-items-center">
@@ -58,7 +61,7 @@ export const Landing=({setShow})=>{
             <img className="img-fluid" src={section_3} alt=""/>
           </Col>
         </Row>
-        <Row className="align-items-center">
+        <Row className="align-items-center my-5 py-5">
           <Col xs={{order:2,size:12}} sm={{order:1,size:6}}>
             <img className="img-fluid" src={section_4} alt=""/>
           </Col>
@@ -74,12 +77,12 @@ export const Landing=({setShow})=>{
             </p>
           </Col>
         </Row>
-        <SuccessStoriesACont/>
+        {/* <SuccessStoriesACont/> */}
         <CommunityA/>
         <WeAre/>
-        <Row>
+        <Row className="my-5">
           <Col>
-            <ContactFormStCont/>
+            <ContactFormStCont history={history}/>
           </Col>
         </Row>
 

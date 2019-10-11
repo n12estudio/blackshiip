@@ -14,7 +14,10 @@ import {
   faPhone,
   faTruckPickup,
   faSitemap,
-  faBuilding
+  faBuilding,
+  faChevronLeft,
+  faChevronRight,
+  faPaperPlane
 
 } from '@fortawesome/free-solid-svg-icons'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,7 +32,10 @@ library.add(fab,
   faPhone,
   faTruckPickup,
   faSitemap,
-  faBuilding
+  faBuilding,
+  faChevronLeft,
+  faChevronRight,
+  faPaperPlane
 
 )
 

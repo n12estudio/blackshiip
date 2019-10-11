@@ -8,7 +8,7 @@ import '../../style/utils.css';
 import '../../style/form.css';
 
 const duration = 500
-export default class ContactFormSt extends Component {
+export default class ContactFormLTD extends Component {
   constructor(props){
     super(props)
     this.state={
@@ -32,7 +32,7 @@ export default class ContactFormSt extends Component {
         {
             required:false,
             elType: 'WelcomeM',
-            title:'¡Atrévete a crecer!',
+            title:'¿Estás listo para crecer?',
             message: 'Hay una solución para el problema que tiene tu empresa, cuéntanos los retos de ella y recibe un diagnóstico completamente gratis de lo que puedes mejorar.   ',
             small:"Puedes pasar a la siguiente pregunta presionando tab",
             className:"text-center",
@@ -119,30 +119,30 @@ export default class ContactFormSt extends Component {
         //   icon:'fas fa-plus-square',
         //   sizeSM:[4,8]
         // },
-        {
-          required:true,
-          label:'Nombre comercial',
-          type:'text',
-          elType:'InputSimple',
-          forL:'nombre_empresa',
-          id:'nombre_empresa',
-          name:'nombre_empresa',
-          longQ:'El que usa comercialmente la empresa',
-          icon:'building',
-          sizeSM:[4,8]
-        },
-        {
-          required:true,
-          label:'Sitio web',
-          type:'text',
-          elType:'InputSimple',
-          forL:'web',
-          id:'web',
-          name:'web',
-          longQ:'Sitio web de la empresa',
-          icon:'sitemap',
-          sizeSM:[4,8]
-        },
+        // {
+        //   required:true,
+        //   label:'Nombre comercial',
+        //   type:'text',
+        //   elType:'InputSimple',
+        //   forL:'nombre_empresa',
+        //   id:'nombre_empresa',
+        //   name:'nombre_empresa',
+        //   longQ:'El que usa comercialmente la empresa',
+        //   icon:'building',
+        //   sizeSM:[4,8]
+        // },
+        // {
+        //   required:true,
+        //   label:'Sitio web',
+        //   type:'text',
+        //   elType:'InputSimple',
+        //   forL:'web',
+        //   id:'web',
+        //   name:'web',
+        //   longQ:'Sitio web de la empresa',
+        //   icon:'sitemap',
+        //   sizeSM:[4,8]
+        // },
         {
           required:true,
           label:'Nombre',
@@ -185,14 +185,20 @@ export default class ContactFormSt extends Component {
           sizeSM: [5, 7]
         },
         {
-          label:'Puesto',
-          type:'text',
-          elType:'InputSimple',
-          forL:'cargo',
-          id:'cargo',
-          name:'cargo',
+          label:'Eres un(a)...',
+          type:'select',
+          elType:'InputOptions',
+          forL:'tipo',
+          id:'tipo',
+          name:'tipo',
           longQ:'Puesto dentro de la empresa',
           icon:'briefcase',
+          options:[
+            'Startup',
+            'Emprendedor',
+            'Investigador',
+            'Universidad'
+          ],
           sizeSM:[4,8]
         },
         // {
@@ -231,12 +237,12 @@ export default class ContactFormSt extends Component {
           icon:'phone',sizeSM:[4,8]
         },
         {
-        label:'¿Qué reto enfrenta tu empresa?',
+        label:'Tu idea, modelo de negocio, investigación, proyecto, etc',
         type:'textarea',
         elType:'InputSimple',
-        forL:'solucion',
-        id:'solucion',
-        name:'solucion',
+        forL:'reto',
+        id:'reto',
+        name:'reto',
         longQ:'Comentarios',
         icon:'truck-pickup',
         sizeSM:[4,8]
@@ -405,16 +411,14 @@ export default class ContactFormSt extends Component {
   // }
   startSend=()=>{
     const {
-      web,
-      nombre_empresa,
       nombre,
       apellidos,
-      cargo,
       email,
       tel,
-      solucion,
+      reto,
+      tipo
     }=this.state
-    const info = {web,nombre_empresa,nombre,apellidos,cargo,email,tel,solucion,startup:true}
+    const info = {nombre,apellidos,email,tel,reto,tipo}
     this.props.postDataLead(info)
   }
   renderProgress=()=>{
@@ -503,20 +507,17 @@ export default class ContactFormSt extends Component {
               <ButtonGroup>
                   <Button onClick={()=>this.changePossibleQ(false)}
                     disabled={currentQ===0}
-                    color="info"
                     className="animated slideInLeft">
                     <FontAwesomeIcon icon="chevron-left"/> Anterior
                   </Button>
                   {currentQ===possibleQ.length-1
                     ?<Button onClick={this.startSend}
-                              color="info"
                               disabled={isPosting||showMessage}
                               className="animated slideInRight">
                           Enviar <FontAwesomeIcon icon="paper-plane"/>
                       </Button>
                       :<Button onClick={()=>this.changePossibleQ(true)}
                               disabled={currentQ===possibleQ.length-1}
-                              color="info"
                               className="animated slideInRight">Siguiente
                               <FontAwesomeIcon icon="chevron-right"/>
                       </Button>

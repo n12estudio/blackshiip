@@ -30,7 +30,7 @@ export const create_lead= async(req,res,next)=>{
             to: body.email,
             subject: 'Registro',
             context: body,
-            template: TEMPLATES.LEAD_A
+            template: body.startup?TEMPLATES.LEAD_A:TEMPLATES.LEAD_B 
     };
 
     transporter.sendMail(mail_options,(error, info) => {
