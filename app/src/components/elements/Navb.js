@@ -64,7 +64,7 @@ export default class Example extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mx-auto" navbar>
               <NavItem>
-                <NavLink href="#mision">Misión</NavLink>
+                <NavLink tag={Link} to="#mision">Misión</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#challenges">#Challenges</NavLink>
