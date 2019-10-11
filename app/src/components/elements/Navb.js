@@ -7,11 +7,8 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  NavLink
+ } from 'reactstrap';
 import logo_bs from '../../assets/img/logo/logo_alt.svg';
 import logo_bs_b from '../../assets/img/logo/logoB_n.svg';
 import logo_bs_wh from '../../assets/img/logo/logo_alt_wh.svg';
@@ -81,23 +78,6 @@ export default class Example extends React.Component {
               <NavItem>
                 <NavLink href="#comunidad">Comunidad</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
             </Nav>
           </Collapse>
           <NavbarBrand tag={Link} to="/b">
